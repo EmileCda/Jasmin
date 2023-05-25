@@ -1,4 +1,4 @@
-package fr.emile.enums;
+package fr.jasmin.enums;
 
 import java.util.List;
 

@@ -8,5 +8,6 @@
 </head>
 <body>
 <jsp:forward page="faces/home.xhtml"></jsp:forward>
+
 </body>
 </html>

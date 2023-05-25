@@ -1,4 +1,4 @@
-package fr.emile.utils;
+package fr.jasmin.utils;
 
 import java.text.Normalizer;
 import java.text.ParseException;
@@ -18,14 +18,7 @@ public final class Utils {
 		
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date); // original date
-//		System.out.println("now: "  + calendar.getTime());
-		
-//		Utils.trace(Utils.date2String(calendar.getTime(),"dd/MM/yyyy"));
-		calendar.add(Calendar.DATE, nbDay); // Adding 5 days
-
-		
-//		System.out.println("After 50 days: "             + calendar.getTime());
-//		Utils.trace(Utils.date2String(calendar.getTime(),"dd/MM/yyyy"));
+		calendar.add(Calendar.DATE, nbDay); // Adding  days
 
 		return calendar.getTime() ; 
 	}

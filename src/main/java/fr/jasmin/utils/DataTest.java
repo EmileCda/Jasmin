@@ -1,4 +1,4 @@
-package fr.emile.utils;
+package fr.jasmin.utils;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -9,18 +9,18 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-import fr.emile.common.IConstant;
-import fr.emile.entity.Address;
-import fr.emile.entity.BankCard;
-import fr.emile.entity.Comment;
-import fr.emile.entity.Item;
-import fr.emile.entity.Order;
-import fr.emile.entity.User;
-import fr.emile.entity.Category;
+import fr.jasmin.common.IConstant;
+//import fr.jasmin.entity.Address;
+//import fr.jasmin.entity.BankCard;
+//import fr.jasmin.entity.Comment;
+//import fr.jasmin.entity.Item;
+//import fr.jasmin.entity.Order;
+//import fr.jasmin.entity.User;
+//import fr.jasmin.entity.Category;
 
-import fr.emile.enums.Gender;
-import fr.emile.enums.Profile;
-import fr.emile.utils.Utils;
+import fr.jasmin.enums.Gender;
+import fr.jasmin.enums.Profile;
+import fr.jasmin.utils.Utils;
 
 public final class DataTest implements IConstant {
 
@@ -62,101 +62,101 @@ public final class DataTest implements IConstant {
 	private static List<String> sentenseAdjectiveListManyFemale;
 
 	// ---------------------------------------------------------------------------------------------------
-	public static Category genCategory() {
-
-		return new Category(DataTest.categoryName(), Utils.randInt(5, 90), Utils.randInt(0, 1) > 0 ? true : false,
-				DataTest.picUrl());
-
-	}
-
-	// ---------------------------------------------------------------------------------------------------
-	public static String genOrderNumber(int id) {
-		
-		
-		return String.format("DT%s-ID%d-RN%06d-FR",Utils.date2String(DATE_NOW, "yyyyMMdd"),id,Utils.randInt(0, 999999) );
-		
-		
-	}
-
-	// ---------------------------------------------------------------------------------------------------
-	public static Comment genComment() {
-		return new Comment (DataTest.sentence(), Utils.randInt(0, 5));
-	}
-
-	// ---------------------------------------------------------------------------------------------------
-	public static BankCard genBankCardNoName() {
-
-		BankCard myBankCard = new BankCard();
-		int bin = Utils.randInt(111111, 999999);
-		int digit3 = Utils.randInt(0, 999);
-		int digit8 = Utils.randInt(11111111, 99999999);
-
-		myBankCard.setCardClairNumber(String.format("%06d%08d", bin, digit8));
-		Date startDate = Utils.string2Date("01/01/2023", "dd/MM/yyyy");
-		Date endDate = Utils.string2Date("01/01/2025", "dd/MM/yyyy");
-		myBankCard.setExpiryDateJava(DataTest.date(startDate, endDate));
-		myBankCard.setClairCrypto(String.format("%03d", digit3));
-
-		return myBankCard;
-	}
-
-	// ---------------------------------------------------------------------------------------------------
-	public static BankCard genBankCard() {
-
-		BankCard myBankCard = new BankCard();
-
-		myBankCard = DataTest.genBankCardNoName();
-
-		Gender gender = DataTest.gender();
-		String firstname1 = DataTest.firstname(gender);
-		String lastname = DataTest.lastname();
-
-		myBankCard.setOwnerGender(gender);
-		myBankCard.setOwnerFirstname(firstname1);
-		myBankCard.setOwnerLastname(lastname);
-
-		return myBankCard;
-	}
-
-	// ---------------------------------------------------------------------------------------------------
-	public static User genUser() {
-
-		Date startDate = Utils.string2Date("01/01/1900", "dd/MM/yyyy");
-		Date endDate = Utils.string2Date("01/01/2023", "dd/MM/yyyy");
-		Gender gender = DataTest.gender();
-		String firstname = DataTest.firstname(gender);
-		String lastname = DataTest.lastname();
-
-		return new User(gender, firstname, lastname, DataTest.date(startDate, endDate), DataTest.profile(),
-				DataTest.email(firstname, lastname), DataTest.pass(firstname), DataTest.phone());
-
-	}
-
-	// ---------------------------------------------------------------------------------------------------
-	public static Item genItem() {
-		return new Item(DataTest.itemName(), DataTest.sentence(), Utils.randInt(1, 1000) / 10.0, Utils.randInt(0, 99),
-				Utils.randInt(0, 9999), DataTest.picUrl(), DataTest.videoUrl());
-
-	}
-
-//---------------------------------------------------------------------------------------------------
-	public static Address genAddress() {
-
-		return new Address(DataTest.number(), DataTest.numberType(), DataTest.streetType(), DataTest.street(),
-				DataTest.city(), DataTest.zipcode());
-	}
-
-	// ---------------------------------------------------------------------------------------------------
-	public static String sentence() {
-
-		int sujectType = subjectType();
-
-		return (String.format(" %s %s %s %s ", DataTest.subject(sujectType),
-				DataTest.verb(sujectType), DataTest.subject(sujectType), DataTest.complement(sujectType)
-				));
-
-	}
-
+//	public static Category genCategory() {
+//
+//		return new Category(DataTest.categoryName(), Utils.randInt(5, 90), Utils.randInt(0, 1) > 0 ? true : false,
+//				DataTest.picUrl());
+//
+//	}
+//
+//	// ---------------------------------------------------------------------------------------------------
+//	public static String genOrderNumber(int id) {
+//		
+//		
+//		return String.format("DT%s-ID%d-RN%06d-FR",Utils.date2String(DATE_NOW, "yyyyMMdd"),id,Utils.randInt(0, 999999) );
+//		
+//		
+//	}
+//
+//	// ---------------------------------------------------------------------------------------------------
+//	public static Comment genComment() {
+//		return new Comment (DataTest.sentence(), Utils.randInt(0, 5));
+//	}
+//
+//	// ---------------------------------------------------------------------------------------------------
+//	public static BankCard genBankCardNoName() {
+//
+//		BankCard myBankCard = new BankCard();
+//		int bin = Utils.randInt(111111, 999999);
+//		int digit3 = Utils.randInt(0, 999);
+//		int digit8 = Utils.randInt(11111111, 99999999);
+//
+//		myBankCard.setCardClairNumber(String.format("%06d%08d", bin, digit8));
+//		Date startDate = Utils.string2Date("01/01/2023", "dd/MM/yyyy");
+//		Date endDate = Utils.string2Date("01/01/2025", "dd/MM/yyyy");
+//		myBankCard.setExpiryDateJava(DataTest.date(startDate, endDate));
+//		myBankCard.setClairCrypto(String.format("%03d", digit3));
+//
+//		return myBankCard;
+//	}
+//
+//	// ---------------------------------------------------------------------------------------------------
+//	public static BankCard genBankCard() {
+//
+//		BankCard myBankCard = new BankCard();
+//
+//		myBankCard = DataTest.genBankCardNoName();
+//
+//		Gender gender = DataTest.gender();
+//		String firstname1 = DataTest.firstname(gender);
+//		String lastname = DataTest.lastname();
+//
+//		myBankCard.setOwnerGender(gender);
+//		myBankCard.setOwnerFirstname(firstname1);
+//		myBankCard.setOwnerLastname(lastname);
+//
+//		return myBankCard;
+//	}
+//
+//	// ---------------------------------------------------------------------------------------------------
+//	public static User genUser() {
+//
+//		Date startDate = Utils.string2Date("01/01/1900", "dd/MM/yyyy");
+//		Date endDate = Utils.string2Date("01/01/2023", "dd/MM/yyyy");
+//		Gender gender = DataTest.gender();
+//		String firstname = DataTest.firstname(gender);
+//		String lastname = DataTest.lastname();
+//
+//		return new User(gender, firstname, lastname, DataTest.date(startDate, endDate), DataTest.profile(),
+//				DataTest.email(firstname, lastname), DataTest.pass(firstname), DataTest.phone());
+//
+//	}
+//
+//	// ---------------------------------------------------------------------------------------------------
+//	public static Item genItem() {
+//		return new Item(DataTest.itemName(), DataTest.sentence(), Utils.randInt(1, 1000) / 10.0, Utils.randInt(0, 99),
+//				Utils.randInt(0, 9999), DataTest.picUrl(), DataTest.videoUrl());
+//
+//	}
+//
+////---------------------------------------------------------------------------------------------------
+//	public static Address genAddress() {
+//
+//		return new Address(DataTest.number(), DataTest.numberType(), DataTest.streetType(), DataTest.street(),
+//				DataTest.city(), DataTest.zipcode());
+//	}
+//
+//	// ---------------------------------------------------------------------------------------------------
+//	public static String sentence() {
+//
+//		int sujectType = subjectType();
+//
+//		return (String.format(" %s %s %s %s ", DataTest.subject(sujectType),
+//				DataTest.verb(sujectType), DataTest.subject(sujectType), DataTest.complement(sujectType)
+//				));
+//
+//	}
+//
 	// ---------------------------------------------------------------------------------------------------
 
 	public static int subjectType() {

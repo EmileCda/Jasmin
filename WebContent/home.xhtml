@@ -12,45 +12,48 @@
 </head>
 <ui:composition template="/resources/template/main-template.xhtml">
 	<ui:define name="content">
-				<f:view>
+		<f:view>
 
-		<h:form>
-			<h2>#{msg['home.title']}</h2>
-			<h:graphicImage library="images" name="homepage.jpg" class="homePage" />
+			<h:form>
+				<h2>#{msg['home.title']}</h2>
+				<h:graphicImage library="images" name="homepage.jpg"
+					class="homePage" />
 
-			<div class="main-container">
-				<div class="row-div">
+				<div class="main-container">
+					<div class="row-div">
 
-					<h:inputText value="#{connectionBean.account}" required="true"
-						a:placeholder="#{msg['connection.username']}"
-						requiredMessage="#{msg['connection.prompt.username']}"
-						id="firstname" class="input-text" />
-					<h:message for="firstname" />
+						<h:inputText value="#{connectionBean.account}" required="true"
+							a:placeholder="#{msg['connection.username']}"
+							requiredMessage="#{msg['connection.prompt.username']}"
+							id="firstname" class="input-text" />
+						<h:message for="firstname" />
+					</div>
+					<div class="row-div">
+						<h:inputText value="#{connectionBean.password}" required="true"
+							a:placeholder="#{msg['connection.password']}"
+							requiredMessage="#{msg['connection.prompt.password']}"
+							id="password" class="input-text" />
+						<h:message for="password" />
+					</div>
+					<div class="row-div">
+						<h:commandButton id="submitConnection"
+							value="#{msg['connection.submit']}" styleClass="submit-button"
+							action="#{connectionBean.checkUser}" />
+
+
+					</div>
+
+
+					<div class="row-div message">
+						<h:link value="#{msg['connection.not-subscibre-yet']}" outcome="user-login" />
+					</div>
+
+
 				</div>
-				<div class="row-div">
-					<h:inputText value="#{connectionBean.password}" required="true"
-						a:placeholder="#{msg['connection.password']}"
-						requiredMessage="#{msg['connection.prompt.password']}"
-						id="password" class="input-text" />
-					<h:message for="password" />
-				</div>
-				<div class="row-div">
-					<h:commandButton id="submitConnection"
-						value="#{msg['connection.submit']}" styleClass="submit-button"
-						action="user-login.xhtml" />
-<!-- 						action="#{connectionBean.checkUser()}" /> -->
 
 
-				</div>
-
-				<!-- 					<div class="row-div message"><p>#{msg['connection.subscibreYet']}</p></div> -->
-
-
-			</div>
-
-
-		</h:form>
-				</f:view>
+			</h:form>
+		</f:view>
 	</ui:define>
 </ui:composition>
 

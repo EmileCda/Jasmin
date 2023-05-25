@@ -312,3 +312,15 @@ a:hover {
 		border-bottom: 1px solid var(--medium);
 	}
 }
+
+
+.w10{
+	
+	max-width: 10rem;
+	}
+	
+.w5{
+	
+	max-width: 5rem;
+	}
+}

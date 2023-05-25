@@ -1,9 +1,9 @@
 
-package fr.emile.enums;
+package fr.jasmin.enums;
 
 public enum Profile {
 
-	Client("Client", 0), Manager("Admin", 1), STORE_KEEPER("magasinier", 2), WS_BASIC("Client WS basic", 3),
+	CLIENT("Client", 0), MANAGER("Admin", 1), STORE_KEEPER("magasinier", 2), WS_BASIC("Client WS basic", 3),
 	WS_ADMIN("Client WS admin", 4), OTHER("autre", 5);
 
 	private String name;
