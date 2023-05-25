@@ -9,6 +9,8 @@ public interface IUserDao {
 	
 
 	User get(String email) throws Exception ;
+	User get(int id) throws Exception ;
+
 	User addStorekeeper(User user) throws Exception ;
 	User getStorekeeper(Integer id) throws Exception;
 	void updateStorekeeper(User user) throws Exception;

@@ -6,3 +6,8 @@
 	max-height: 50%;
 	
 }
+
+.submit-button{
+	background-color:var(--back);
+	
+}

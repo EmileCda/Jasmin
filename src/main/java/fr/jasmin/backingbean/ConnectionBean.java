@@ -43,10 +43,12 @@ public class ConnectionBean implements Serializable{
 		String lastname  = DataTest.lastname();
 		
 		String email = DataTest.email(firstname, lastname);
-		
+
+//		this.getUser().setFirstname(this.getAccount());
 		this.setUser(userDao.get(email));
 
 		Utils.trace(user.toString());
+		this.setAccount(user.getEmail());
 		
 		
 		switch (user.getProfile()) {

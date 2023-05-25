@@ -27,7 +27,7 @@ public interface IConstant {
 	public final String DEFAULT_ADDRESS_CITY = "No-City";
 	public final String DEFAULT_ADDRESS_ZIP_CODE = "AXBXC";
 	public final String DEFAULT_EMAIL= "no-mail@no-mail.no";
-	public final String DEFAULT_PASS= "xxxxxxxxxx";
+	public final String DEFAULT_PASSWORD= "xxxxxxxxxx";
 	public final String DEFAULT_PHONE= "0011223344";
 
 	public final boolean DEFAULT_IS_VALIDE = true;

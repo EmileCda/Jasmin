@@ -14,6 +14,7 @@ import org.hibernate.query.Query;
 import fr.jasmin.entity.User;
 import fr.jasmin.enums.Profile;
 import fr.jasmin.model.dao.interfaces.IUserDao;
+import fr.jasmin.utils.DataTest;
 //* test* test* test* test* test * test * test * test * test * test * test * test * test * test * test 
 public class UserDao implements IUserDao {
 	
@@ -24,9 +25,9 @@ public class UserDao implements IUserDao {
 	@Override
 	public User get(String email) throws Exception {
 		
-//		Profile  profile = Profile.Client ;
+		Profile  profile = Profile.CLIENT ;
 //		Profile  profile = Profile.MANAGER ;
-		Profile  profile = Profile.STORE_KEEPER ;
+//		Profile  profile = Profile.STORE_KEEPER ;
 //		Profile  profile = Profile.OTHER;
 
 		
@@ -73,6 +74,19 @@ public class UserDao implements IUserDao {
 	public void removeStorekeeper(User user) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public User get(int id) throws Exception {
+
+		User UserReturn = null;
+				
+		UserReturn = new User();
+		UserReturn.setFirstname(DataTest.firstname());
+		UserReturn.setEmail(DataTest.firstname());
+		UserReturn.setProfile(Profile.MANAGER);
+		
+		return UserReturn;
 	}
 	
 	

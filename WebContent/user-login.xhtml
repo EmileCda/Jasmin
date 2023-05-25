@@ -15,8 +15,14 @@
 		<f:view>
 			<h:form>
 				<h2>#{msg['user.login.title']}</h2>
-				<h:graphicImage library="images" name="homepage.jpg"
+				<h:graphicImage library="images" name="register-here.png"
 					class="homePage" />
+				<div id="login" class="login">
+					<ui:include src="/resources/module/login.xhtml" />
+				</div>
+				<div id="identification" class="identification">
+					<ui:include src="/resources/module/identification.xhtml" />
+				</div>
 			</h:form>
 		</f:view>
 	</ui:define>
