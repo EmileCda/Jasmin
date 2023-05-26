@@ -1,5 +1,7 @@
 package fr.jasmin.backingbean;
 
+import java.util.Date;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -16,8 +18,21 @@ import fr.jasmin.utils.Utils;
 public class LoginBean extends User implements IConstant{
 	
 	private String passwordRepeat ;
+	private String birthDateString ;
 	
 	public LoginBean() {
+		this(DEFAULT_EMAIL,DEFAULT_PASSWORD);
+		this.setBirthDate(DataTest.brithDate());
+		this.setFirstname(DEFAULT_FIRSTNAME);
+		this.setLastname(DEFAULT_LASTNAME);
+		this.setPhoneNumber(DEFAULT_PHONE);
+		this.setPass(DataTest.pass(this.getLastname()));
+		this.setPasswordRepeat(this.getPass());
+		
+		
+
+	}
+	public LoginBean(int original) {
 		this(DEFAULT_EMAIL,DEFAULT_PASSWORD);
 		// TODO Auto-generated constructor stub
 	}
@@ -26,6 +41,7 @@ public class LoginBean extends User implements IConstant{
 		
 		this.setEmail ( email);
 		this.setPass( password);
+		this.setBirthDate(DATE_NOW);	
 	}
 
 	
@@ -36,6 +52,7 @@ public class LoginBean extends User implements IConstant{
 		String lastname = DataTest.lastname();
 				
 		this.setFirstname(firstname);
+		this.setPass(DataTest.pass(firstname));
 		this.setLastname(lastname);
 		this.setGender(gender);
 		this.setProfile(DataTest.profile());
@@ -63,9 +80,6 @@ public class LoginBean extends User implements IConstant{
 			user.setFirstname (this.getFirstname());
 		}
 		
-
-		
-
 		
 	}
 
@@ -76,7 +90,16 @@ public class LoginBean extends User implements IConstant{
 	public void setPasswordRepeat(String passwordRepeat) {
 		this.passwordRepeat = passwordRepeat;
 	}
-	
+	public String getBirthDateString() {
+		
+		return Utils.date2String(getBirthDate(), DATE_FORMAT);
+	}
+	public void setBirthDateString(String birthDateString) {
+		
+		this.birthDateString = birthDateString;
+		this.setBirthDate(Utils.string2Date(this.birthDateString, DATE_FORMAT));
+	}
+
 	
 
 }

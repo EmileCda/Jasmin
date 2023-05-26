@@ -101,7 +101,7 @@ public class User  {
 
 
 	public Date getBirthDate() {
-		return birthDate;
+		return this.birthDate;
 	}
 
 

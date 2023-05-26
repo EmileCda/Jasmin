@@ -316,6 +316,15 @@ public final class DataTest implements IConstant {
 	
 	// ---------------------------------------------------------------------------------------------------
 
+	public static Date brithDate() {
+		
+		int nbDay = Utils.randInt(1, 100*365);
+		
+		return Utils.addDate(DATE_NOW, - nbDay);
+
+	}
+
+	// ---------------------------------------------------------------------------------------------------
 	public static String email(String firstname, String lastname) {
 
 		return Utils.stripAccent(String.format("%s.%s@%s.%s", firstname.toLowerCase(), lastname.toLowerCase(),

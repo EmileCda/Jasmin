@@ -12,7 +12,9 @@ public interface IConstant {
 
 	public final String DEFAULT_BANK_CARD_NUMBER = "1000200030004000";
 	public final String DEFAULT_BANK_CARD_CRYPTO = "XYZ";
-	public final Date DEFAULT_DATE = Utils.string2Date("01/01/1970", "dd/MM/yyyy");
+	public final String DATE_FORMAT= "dd/MM/yyyy";
+	
+	public final Date DEFAULT_DATE = Utils.string2Date("01/01/1970", DATE_FORMAT);
 	public final Date DATE_NOW = new Date();
 	public final Date DEFAULT_DELIVERY_DATE = Utils.addDate(DATE_NOW,5);
 	
